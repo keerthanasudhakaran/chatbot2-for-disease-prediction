@@ -1,10 +1,10 @@
 from openai import OpenAI
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import base64
 import streamlit as st
-import pyaudio
-import wave
+#import pyaudio
+#import wave
 import speech_recognition as sr
 from translate import Translator
 
