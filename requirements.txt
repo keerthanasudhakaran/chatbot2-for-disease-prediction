@@ -10,3 +10,4 @@ streamlit_chat
 langchain-community
 pypdf
 sentence-transformers
+faiss-cpu
