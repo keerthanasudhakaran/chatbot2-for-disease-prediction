@@ -8,6 +8,10 @@ import streamlit as st
 import speech_recognition as sr
 from translate import Translator
 
+HUGGINGFACEHUB_API_TOKEN=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+openai_api_key=st.secrets["openai_api_key"]
+
+
 import nltk
 nltk.download('wordnet')
 
