@@ -7,19 +7,21 @@ import streamlit as st
 #import wave
 import speech_recognition as sr
 from translate import Translator
+from huggingface_hub import hf_api
 from huggingface_hub import login
 
-#hf_token=st.secrets["api_token"]
+hf_token=st.secrets["api_token"]
 #openai_api_key=st.secrets["openai_api_key"]
 #login(api_token)
-hf_token= os.getenv("api_token")
-print(f"Token loaded: {hf_token}")  # This will print None if the token is not loaded properly
+login(token=hf_token)
+#hf_token= os.getenv("api_token")
+#print(f"Token loaded: {hf_token}")  # This will print None if the token is not loaded properly
 
-if hf_token:
+#if hf_token:
     # Authenticate with Hugging Face API using the token
-    login(token=hf_token)
-else:
-    raise ValueError("Hugging Face token is missing. Please set the 'HUGGINGFACE_TOKEN' environment variable.")
+ #   login(token=hf_token)
+#else:
+ #   raise ValueError("Hugging Face token is missing. Please set the 'HUGGINGFACE_TOKEN' environment variable.")
 
 import nltk
 nltk.download('wordnet')
