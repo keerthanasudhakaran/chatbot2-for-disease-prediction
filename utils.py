@@ -11,7 +11,7 @@ from huggingface_hub import hf_api
 from huggingface_hub import login
 from huggingface_hub import InferenceClient
 
-#hf_token=st.secrets["api_token"]
+hf_token=st.secrets["api_token"]
 #openai_api_key=st.secrets["openai_api_key"]
 #login(api_token)
 
