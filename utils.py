@@ -18,7 +18,7 @@ print( "The token is : ", hf_token);
 #client=InferenceClient( provider = "hf-inference", api_key = hf_token , )
 client=InferenceClient( "meta-llama/Llama-2-7b-chat-hf"  )
 
-completion = client.chat.completions.create( model = "meta-llama/Llama-2-7b-chat-hf",
+completion = client.create( model = "meta-llama/Llama-2-7b-chat-hf",
                                             messages= [
                                                {
                                                     "role" : "user",
