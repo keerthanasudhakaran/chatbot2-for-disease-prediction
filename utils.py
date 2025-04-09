@@ -9,10 +9,10 @@ import speech_recognition as sr
 from translate import Translator
 from huggingface_hub import login
 
-#HUGGINGFACEHUB_API_TOKEN=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+#hf_token=st.secrets["api_token"]
 #openai_api_key=st.secrets["openai_api_key"]
-#login(HUGGINGFACEHUB_API_TOKEN)
-hf_token= os.getenv("HUGGINGFACEHUB_API_TOKEN")
+#login(api_token)
+hf_token= os.getenv("api_token")
 print(f"Token loaded: {hf_token}")  # This will print None if the token is not loaded properly
 
 if hf_token:
