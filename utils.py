@@ -13,6 +13,9 @@ from huggingface_hub import login
 hf_token=st.secrets["api_token"]
 #openai_api_key=st.secrets["openai_api_key"]
 #login(api_token)
+
+hf_api.list_models(token="your_hugging_face_api_token")
+
 login(token=hf_token)
 #hf_token= os.getenv("api_token")
 #print(f"Token loaded: {hf_token}")  # This will print None if the token is not loaded properly
