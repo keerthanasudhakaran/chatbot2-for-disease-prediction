@@ -12,12 +12,10 @@ from huggingface_hub import login
 #HUGGINGFACEHUB_API_TOKEN=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 #openai_api_key=st.secrets["openai_api_key"]
 #login(HUGGINGFACEHUB_API_TOKEN)
-
-HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN")
-
-if HUGGINGFACE_TOKEN:
+hf_token= os.getenv("HUGGINGFACE_TOKEN")
+if hf_token:
     # Authenticate with Hugging Face API using the token
-    login(token=HUGGINGFACE_TOKEN)
+    login(token=hf_token)
 else:
     raise ValueError("Hugging Face token is missing. Please set the 'HUGGINGFACE_TOKEN' environment variable.")
 
