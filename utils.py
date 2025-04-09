@@ -10,7 +10,7 @@ from translate import Translator
 
 HUGGINGFACEHUB_API_TOKEN=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 openai_api_key=st.secrets["openai_api_key"]
-
+login(HUGGINGFACEHUB_API_TOKEN)
 
 import nltk
 nltk.download('wordnet')
@@ -76,7 +76,8 @@ llama_prompt = PromptTemplate(
 chain_type_kwargs = {"prompt": llama_prompt}
 
 # Create LLM
-llm = CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0.bin", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
+#llm = CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0.bin", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
+llm = CTransformers(model="llama-2-7b-chat", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
 
 # Instantiate the ConversationalRetrievalChain
 
