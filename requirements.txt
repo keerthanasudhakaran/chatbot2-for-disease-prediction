@@ -25,3 +25,4 @@ huggingface-hub==0.22.2
 google-api-core==2.17.1
 langchain-google-genai==1.0.1
 tensorflow
+matplotlib
