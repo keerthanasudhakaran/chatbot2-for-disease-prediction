@@ -15,29 +15,29 @@ from huggingface_hub import InferenceClient
 #openai_api_key=st.secrets["openai_api_key"]
 #login(api_token)
 
-#client=InferenceClient( provider = "hf-inference", api_key = hf_token , )
-#completion = client.chat.completions.create( model = "meta-llama/Llama-2-7b-chat-hf",
-#                                            messages= [
-#                                                {
- #                                                   "role" : "user",
-  #                                                  "content" : "What is the capital of France?"
-   #                                             }
-    #                                        ],
-     #                                       max_tokens = 500, )
-#print( completion.choices[0].message)
+client=InferenceClient( provider = "hf-inference", api_key = hf_token , )
+completion = client.chat.completions.create( model = "meta-llama/Llama-2-7b-chat-hf",
+                                            messages= [
+                                               {
+                                                    "role" : "user",
+                                                   "content" : "What is the capital of France?"
+                                                }
+                                            ],
+                                            max_tokens = 500, )
+print( completion.choices[0].message)
 
 
 #hf_api.list_models(token="your_hugging_face_api_token")
 
 #login(token=hf_token)
-hf_token= os.getenv("api_token")
-print(f"Token loaded: {hf_token}")  # This will print None if the token is not loaded properly
+#hf_token= os.getenv("api_token")
+#print(f"Token loaded: {hf_token}")  # This will print None if the token is not loaded properly
 
-if hf_token:
+#if hf_token:
     # Authenticate with Hugging Face API using the token
-   login(token=hf_token)
-else:
-   raise ValueError("Hugging Face token is missing. Please set the 'HUGGINGFACE_TOKEN' environment variable.")
+#login(token=hf_token)
+#else:
+   #raise ValueError("Hugging Face token is missing. Please set the 'HUGGINGFACE_TOKEN' environment variable.")
 
 import nltk
 nltk.download('wordnet')
@@ -105,7 +105,7 @@ chain_type_kwargs = {"prompt": llama_prompt}
 # Create LLM
 #llm = CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0.bin", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
 #llm = CTransformers(model="meta-Ilama/Llama-2-7b-chat-hf", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
-llm = CTransformers(model="Llama-2-7b-chat-hf", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
+#llm = CTransformers(model="Llama-2-7b-chat-hf", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
 
 # Instantiate the ConversationalRetrievalChain
 
