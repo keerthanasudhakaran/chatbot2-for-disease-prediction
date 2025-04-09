@@ -9,9 +9,17 @@ import speech_recognition as sr
 from translate import Translator
 from huggingface_hub import login
 
-HUGGINGFACEHUB_API_TOKEN=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
-openai_api_key=st.secrets["openai_api_key"]
-login(HUGGINGFACEHUB_API_TOKEN)
+#HUGGINGFACEHUB_API_TOKEN=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+#openai_api_key=st.secrets["openai_api_key"]
+#login(HUGGINGFACEHUB_API_TOKEN)
+
+HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN")
+
+if HUGGINGFACE_TOKEN:
+    # Authenticate with Hugging Face API using the token
+    login(token=HUGGINGFACE_TOKEN)
+else:
+    raise ValueError("Hugging Face token is missing. Please set the 'HUGGINGFACE_TOKEN' environment variable.")
 
 import nltk
 nltk.download('wordnet')
@@ -77,8 +85,8 @@ llama_prompt = PromptTemplate(
 chain_type_kwargs = {"prompt": llama_prompt}
 
 # Create LLM
-#llm = CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0.bin", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
-llm = CTransformers(model="Llama-2-7b-chat", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
+llm = CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0.bin", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
+#llm = CTransformers(model="Llama-2-7b-chat", model_type="llama", config={'max_new_tokens': 128, 'temperature': 0.01})
 
 # Instantiate the ConversationalRetrievalChain
 
