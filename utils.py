@@ -13,6 +13,8 @@ from huggingface_hub import login
 #openai_api_key=st.secrets["openai_api_key"]
 #login(HUGGINGFACEHUB_API_TOKEN)
 hf_token= os.getenv("HUGGINGFACE_TOKEN")
+print(f"Token loaded: {hf_token}")  # This will print None if the token is not loaded properly
+
 if hf_token:
     # Authenticate with Hugging Face API using the token
     login(token=hf_token)
