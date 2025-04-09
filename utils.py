@@ -7,6 +7,7 @@ import streamlit as st
 #import wave
 import speech_recognition as sr
 from translate import Translator
+from huggingface_hub import login
 
 HUGGINGFACEHUB_API_TOKEN=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 openai_api_key=st.secrets["openai_api_key"]
