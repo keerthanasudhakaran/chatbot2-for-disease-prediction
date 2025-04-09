@@ -14,7 +14,7 @@ from huggingface_hub import InferenceClient
 hf_token=st.secrets["api_token"]
 #openai_api_key=st.secrets["openai_api_key"]
 #login(api_token)
-
+print( "The token is : ", hf_token);
 client=InferenceClient( provider = "hf-inference", api_key = hf_token , )
 completion = client.chat.completions.create( model = "meta-llama/Llama-2-7b-chat-hf",
                                             messages= [
