@@ -13,5 +13,5 @@ langchain==0.1.14
 langchain-text-splitters==0.0.1
 pypdf
 sentence-transformers==2.6.1
-faiss-cpu
-langchain-huggingface
+faiss-cpu==1.8.0
+ctransformers==0.2.27
