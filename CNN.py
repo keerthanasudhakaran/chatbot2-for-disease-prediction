@@ -14,7 +14,8 @@ from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 
 # Load the saved model
-model = load_model("C:/Users/ajith/Downloads/Kidney.h5")
+#model = load_model("C:/Users/ajith/Downloads/Kidney.h5")
+model = load_model("./Kidney.h5")
 
 # Function to preprocess an image
 def preprocess_image(img_path):
